@@ -1,0 +1,54 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "2ndmind",
+  "title": "2ndMind",
+  "description": "Query your 2ndMind — activity search, today's spans, the Now recommendation, and ask the brain.",
+  "icon": "brain.png",
+  "author": "bayramali",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "now",
+      "title": "Now",
+      "subtitle": "2ndMind",
+      "description": "The current rolling recommendation (Now.md).",
+      "mode": "view"
+    },
+    {
+      "name": "today",
+      "title": "Today",
+      "subtitle": "2ndMind",
+      "description": "Today's activity spans.",
+      "mode": "view"
+    },
+    {
+      "name": "search",
+      "title": "Search Brain",
+      "subtitle": "2ndMind",
+      "description": "Full-text search across all captured activity.",
+      "mode": "view"
+    },
+    {
+      "name": "ask",
+      "title": "Ask Brain",
+      "subtitle": "2ndMind",
+      "description": "Ask a question about your own activity and memory (agentic).",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.80.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.19.17",
+    "@types/react": "19.0.10",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "lint": "ray lint"
+  }
+}

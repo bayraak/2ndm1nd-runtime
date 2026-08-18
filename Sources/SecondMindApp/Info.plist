@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Embedded into the 2ndm1nd binary as a __TEXT,__info_plist section
+	     (Package.swift linkerSettings). A plain SwiftPM executable has no
+	     bundle, so this is where TCC finds the usage strings it requires
+	     before it will present Calendar/Reminders/Contacts prompts. The
+	     identifier matches the codesign identifier (-i org.2ndm1nd.app) so
+	     the stable-cert TCC story is unchanged. -->
+	<key>CFBundleIdentifier</key>
+	<string>org.2ndm1nd.app</string>
+	<key>CFBundleName</key>
+	<string>2ndm1nd</string>
+	<key>CFBundleDisplayName</key>
+	<string>2ndm1nd</string>
+	<key>CFBundleVersion</key>
+	<string>2.1</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.1</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>2ndm1nd reads your calendar so the brain knows your schedule and upcoming deadlines.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>2ndm1nd reads your reminders so the brain can track your open tasks.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>2ndm1nd reads contacts to correctly name the people in your life in its memory graph.</string>
+</dict>
+</plist>

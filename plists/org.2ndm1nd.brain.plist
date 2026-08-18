@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>org.2ndm1nd.brain</string>
+
+    <!-- The shift runner: a continuous supervisor that keeps ONE living
+         claude -p brain session alive per ~24h shift, then recreates it.
+         KeepAlive so launchd resurrects the runner if it ever dies (a dead
+         supervisor can't relaunch its own session). Separate from the capture
+         app so capture never depends on the brain. -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>__HOME__/.local/share/2ndm1nd/bin/brain-loop.sh</string>
+    </array>
+
+    <key>RunAtLoad</key><true/>
+    <key>KeepAlive</key><true/>
+    <key>ThrottleInterval</key><integer>60</integer>
+
+    <key>WorkingDirectory</key>
+    <string>__HOME__/Projects/2ndm1nd</string>
+
+    <key>StandardOutPath</key>
+    <string>__HOME__/Library/Logs/2ndm1nd/brain-loop.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>__HOME__/Library/Logs/2ndm1nd/brain-loop.err.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key><string>__HOME__</string>
+        <key>USER</key><string>__USER__</string>
+        <key>LOGNAME</key><string>__USER__</string>
+        <key>PATH</key><string>__HOME__/.local/share/2ndm1nd/bin:__HOME__/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <!-- WAKE/SLEEP architecture (2026-07-17, "reflect the real mind"): light
+             associative WAKE cycles every ~3h while he's active (idle-gated, so
+             quiet stretches cost nothing) + one deep SLEEP consolidation at the
+             first cycle past midnight (day-start, floor-exempt). Supersedes the
+             07-14 "daily is enough" cadence — cost is not a constraint (07-17)
+             and a mind thinks while living, consolidates while sleeping. -->
+        <key>SECONDMIND_MIN_RELAUNCH</key><string>10800</string>
+        <key>SECONDMIND_MAX_SESSIONS</key><string>9</string>
+        <!-- 2026-08-05: DREAM gets 2x this. The SLEEP now carries attribution resolution
+             on top of 8 protocol steps and carried debt; 3600s was thin headroom and
+             thin headroom is what "deferred honestly" is made of. -->
+        <key>SECONDMIND_CYCLE_MAX</key><string>2700</string>
+    </dict>
+</dict>
+</plist>

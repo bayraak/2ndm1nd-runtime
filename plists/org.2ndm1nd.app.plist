@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>org.2ndm1nd.app</string>
+
+    <!-- ONE agent for the whole v2 system (v1 had 27). -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>__HOME__/.local/share/2ndm1nd/bin/2ndm1nd</string>
+    </array>
+
+    <key>RunAtLoad</key><true/>
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key><false/>
+    </dict>
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+
+    <key>WorkingDirectory</key>
+    <string>__HOME__</string>
+
+    <key>StandardOutPath</key>
+    <string>__HOME__/Library/Logs/2ndm1nd/2ndm1nd.stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>__HOME__/Library/Logs/2ndm1nd/2ndm1nd.stderr.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key><string>__HOME__</string>
+        <key>USER</key><string>__USER__</string>
+        <key>LOGNAME</key><string>__USER__</string>
+        <key>PATH</key><string>__HOME__/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+</dict>
+</plist>
