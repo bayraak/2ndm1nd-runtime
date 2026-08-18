@@ -165,7 +165,17 @@ it fits anyone else. Issues and questions are welcome; so are contributions
 that respect the one invariant (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 Known limits and where the project is headed: [ROADMAP.md](ROADMAP.md).
 
-## Agent skill
+## Agent skills
+
+Two skills ship with the repo:
+
+- **`SKILL.md`** (root) — operating the runtime: install, launchd, brain control,
+  ledger queries, config.
+- **`skills/query-2ndm1nd/`** — the consumer skill: lets any agent, in any project,
+  query your brain and land the answer in the work at hand. Three rules it enforces:
+  answers bind to the current project, staleness is always declared (vault story vs
+  raw ledger), and sensitive identifiers are redacted by default.
+
 
 The repo ships a [SKILL.md](SKILL.md) so an AI agent can operate the system
 without re-deriving it from the docs: build, the TCC-safe install path,

@@ -37,3 +37,12 @@ bash 3.2 is a hostile substrate for logic this important. The goal is to fold
 the shift runner into the typed Swift binary — same gates, same budgets, same
 one-session-per-day model — while keeping the two-process boundary exactly as
 it is: capture must never depend on the brain.
+
+## Secret scrubbing in capture
+
+The shell-history connector captures commands verbatim — including exported API
+keys and tokens typed into the terminal, which then live in the ledger. Planned:
+pattern-based scrubbing at capture time (common token shapes, `export KEY=`,
+`Authorization:` headers) replacing matches with a presence marker, same policy
+as private apps. Until then: treat the ledger file with the sensitivity of your
+shell history, because it contains it.
