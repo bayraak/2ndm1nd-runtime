@@ -1,5 +1,7 @@
 # 2ndm1nd
 
+[![CI](https://github.com/bayraak/2ndm1nd-runtime/actions/workflows/ci.yml/badge.svg)](https://github.com/bayraak/2ndm1nd-runtime/actions/workflows/ci.yml)
+
 Local-first ambient capture plus daily LLM consolidation for a personal knowledge
 vault on macOS. A menu-bar app records what you do (keystrokes, clipboard, focused
 windows, shell, git, browser, messages, mail) into an FTS-indexed SQLite ledger.
@@ -21,6 +23,21 @@ No cloud storage. The only network call is the brain's `claude -p` session.
 
 The Swift `Cortex` also schedules smaller solver/daily/weekly jobs, and a
 `BrainCLI` (`brain`) exposes the ledger (search, spans, stats, annotations).
+
+
+```mermaid
+flowchart LR
+    subgraph capture["Capture process — no LLM, ever"]
+        S["Sensors\nkeystrokes · clipboard\nfocus · power"] --> L[("SQLite ledger\nFTS-indexed")]
+        C["Connectors\ngit · shell · browser\nmessages · mail"] --> L
+    end
+    subgraph brain["Brain process — separate launchd job"]
+        B["one claude -p session/day\nDREAM · fold · handoff"]
+    end
+    L --> B
+    B --> V[("Markdown vault\njournal · learnings\nentity notes")]
+    V --> B
+```
 
 ## Privacy guarantees, as structure
 
