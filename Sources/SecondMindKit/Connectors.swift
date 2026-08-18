@@ -4,7 +4,7 @@
 // daily scheduler and via `secondmind connect [name]`.
 //
 // No-special-permission connectors: shell-history, git, ide, browser(Chrome/
-// Arc/Brave/Firefox). Safari/Messages/Mail need Full Disk Access (Phase 6.2/6.3).
+// Arc/Brave). Safari/Messages/Mail need Full Disk Access.
 
 import Foundation
 
@@ -184,7 +184,7 @@ public struct Connectors: Sendable {
         return count
     }
 
-    // MARK: - Browser history (Chrome/Arc/Brave/Firefox via sqlite3 copy)
+    // MARK: - Browser history (Chrome/Arc/Brave via sqlite3 copy)
 
     private func browserHistory(_ state: inout [String: Any]) -> Int {
         var count = 0

@@ -1,6 +1,6 @@
 // BrainServer — localhost HTTP surface for Raycast / MCP / scripts.
 // Dependency-free (Network.framework, no external package) to keep the core
-// Node/Docker-free. Bearer token in Keychain; binds 127.0.0.1 only.
+// Node/Docker-free. Bearer token in a 0600 file; binds 127.0.0.1 only.
 //
 //   GET /health
 //   GET /now                    → Atlas/AI/Now.md
@@ -181,7 +181,7 @@ public final class BrainServer: @unchecked Sendable {
         return (path, query)
     }
 
-    // MARK: - Token (Keychain-backed, file fallback)
+    // MARK: - Token (0600 file)
 
     public var authToken: String { token }
 

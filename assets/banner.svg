@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="2ndm1nd — capture flows into a ledger, the ledger into a memory graph">
+  <!-- ground -->
+  <rect width="1280" height="640" fill="#0b0e14"/>
+
+  <!-- motif: capture (dots) -> ledger (column) -> consolidation (branching graph) -->
+  <g transform="translate(0,96)">
+    <!-- capture: loose dots drifting toward the column -->
+    <g fill="#8b949e">
+      <circle cx="150" cy="70"  r="4"/>
+      <circle cx="215" cy="118" r="3"/>
+      <circle cx="120" cy="165" r="3"/>
+      <circle cx="255" cy="60"  r="3"/>
+      <circle cx="185" cy="210" r="4"/>
+      <circle cx="130" cy="255" r="3"/>
+      <circle cx="245" cy="262" r="3"/>
+      <circle cx="290" cy="160" r="4"/>
+      <circle cx="210" cy="305" r="3"/>
+      <circle cx="300" cy="230" r="3"/>
+      <circle cx="160" cy="330" r="3"/>
+      <circle cx="310" cy="90"  r="3"/>
+    </g>
+    <!-- drift lines: dots feeding the column -->
+    <g stroke="#30363d" stroke-width="2" fill="none">
+      <path d="M296 160 H 420"/>
+      <path d="M316 90  Q 380 100 420 112"/>
+      <path d="M306 230 Q 375 220 420 208"/>
+      <path d="M251 262 Q 350 280 420 256"/>
+      <path d="M221 118 Q 340 130 420 136"/>
+    </g>
+
+    <!-- ledger: a column of stacked rows -->
+    <g>
+      <rect x="420" y="56"  width="150" height="26" rx="4" fill="#1c2330"/>
+      <rect x="420" y="90"  width="150" height="26" rx="4" fill="#1c2330"/>
+      <rect x="420" y="124" width="150" height="26" rx="4" fill="#e0803a"/>
+      <rect x="420" y="158" width="150" height="26" rx="4" fill="#1c2330"/>
+      <rect x="420" y="192" width="150" height="26" rx="4" fill="#1c2330"/>
+      <rect x="420" y="226" width="150" height="26" rx="4" fill="#4f81bd"/>
+      <rect x="420" y="260" width="150" height="26" rx="4" fill="#1c2330"/>
+      <rect x="420" y="294" width="150" height="26" rx="4" fill="#1c2330"/>
+    </g>
+
+    <!-- one line out of the ledger into the graph -->
+    <path d="M570 188 H 690" stroke="#30363d" stroke-width="2" fill="none"/>
+
+    <!-- consolidation: a branching graph -->
+    <g stroke="#30363d" stroke-width="2" fill="none">
+      <path d="M690 188 L 790 108"/>
+      <path d="M690 188 L 800 200"/>
+      <path d="M690 188 L 776 286"/>
+      <path d="M790 108 L 880 66"/>
+      <path d="M790 108 L 892 140"/>
+      <path d="M800 200 L 902 184"/>
+      <path d="M800 200 L 886 246"/>
+      <path d="M776 286 L 872 318"/>
+      <path d="M886 246 L 872 318"/>
+    </g>
+    <g>
+      <circle cx="690" cy="188" r="10" fill="#e0803a"/>
+      <circle cx="790" cy="108" r="7"  fill="#c9d1d9"/>
+      <circle cx="800" cy="200" r="7"  fill="#c9d1d9"/>
+      <circle cx="776" cy="286" r="7"  fill="#c9d1d9"/>
+      <circle cx="880" cy="66"  r="5"  fill="#8b949e"/>
+      <circle cx="892" cy="140" r="5"  fill="#8b949e"/>
+      <circle cx="902" cy="184" r="5"  fill="#4f81bd"/>
+      <circle cx="886" cy="246" r="5"  fill="#8b949e"/>
+      <circle cx="872" cy="318" r="5"  fill="#8b949e"/>
+    </g>
+  </g>
+
+  <!-- name -->
+  <text x="150" y="530" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="96" font-weight="700" fill="#e6edf3" letter-spacing="2">2ndm1nd</text>
+  <text x="156" y="580" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="26" fill="#8b949e">ambient capture &#183; one local ledger &#183; a daily brain</text>
+
+  <!-- boundary mark: capture side carries no model -->
+  <line x1="630" y1="120" x2="630" y2="420" stroke="#30363d" stroke-width="2" stroke-dasharray="2 10"/>
+  <text x="620" y="100" text-anchor="end" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="18" fill="#8b949e">no model</text>
+  <text x="644" y="100" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="18" fill="#8b949e">one session a day</text>
+</svg>
