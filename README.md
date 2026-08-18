@@ -165,6 +165,14 @@ it fits anyone else. Issues and questions are welcome; so are contributions
 that respect the one invariant (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 Known limits and where the project is headed: [ROADMAP.md](ROADMAP.md).
 
+## Agent skill
+
+The repo ships a [SKILL.md](SKILL.md) so an AI agent can operate the system
+without re-deriving it from the docs: build, the TCC-safe install path,
+starting/stopping capture and the brain, querying the ledger, and the spend
+dials. Point an agent at the repo and it picks the skill up, or copy the repo
+folder into your agent's skills directory (e.g. `~/.claude/skills/`).
+
 ## License
 
 [MIT](LICENSE).
