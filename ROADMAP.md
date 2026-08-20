@@ -16,17 +16,28 @@ full contract). The most interesting provider is a fully local model, which
 would make the entire system offline. This is the most-wanted contribution —
 see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## 2. Consolidation evals
+## 2. Consolidation evals — partially shipped
 
-The system rewrites its own memory and self-prompt daily, but nothing measures
-whether consolidation quality improves: today it is self-evolving, not
-self-measuring. The runner already gates completion on *activity* (a rewritten
-handoff, a shrunk LEARNINGS file); the goal is an eval harness over the
-brain's own output — journal accuracy against the ledger, handoff prediction
-hit rates over time, entity-note quality — so "self-learning" becomes a
-measured claim instead of an aspiration. The same harness would give spend a
-denominator (see the honest limit in
-[docs/token-economy.md](docs/token-economy.md)).
+The system rewrites its own memory and self-prompt daily, but for a long time
+nothing measured whether consolidation quality improves: it was self-evolving,
+not self-measuring. The runner gates completion on *activity* (a rewritten
+handoff, a shrunk LEARNINGS file), not on quality.
+
+The deterministic half of this item now exists: [`evals/`](evals/) is a
+stdlib-only harness you point at your own vault and ledger. It measures four
+things — how far the handoff trails the ledger and whether its own coverage
+claim is truthful, leaked emails/digit-runs/secret-shaped tokens in
+brain-written prose, the handoff's section contract, and the fraction of
+ledger-active days that actually got consolidated. It runs against synthetic
+fixtures in CI on every push.
+
+What remains, and is deliberately not built: the judgment half — LLM-scored
+factual consistency of journal claims against ledger evidence, prediction
+hit-rate trending, entity-note quality. [`evals/judge.md`](evals/judge.md)
+documents a manual spot-check recipe for the first of these; none of it
+belongs in CI, because a model grading a model on every push is spend without
+a baseline. The same harness is still the eventual denominator for spend (see
+the honest limit in [docs/token-economy.md](docs/token-economy.md)).
 
 ## 3. Runner migration
 

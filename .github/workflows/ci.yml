@@ -15,6 +15,8 @@ jobs:
       - name: Swift tests
         run: swift test
       - name: Python syntax
-        run: python3 -m compileall -q *.py mcp
+        run: python3 -m compileall -q *.py mcp evals
+      - name: Consolidation eval tests
+        run: python3 -m unittest discover -s evals -v
       - name: Shell syntax
         run: for f in *.sh; do bash -n "$f"; done
